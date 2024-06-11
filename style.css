@@ -1,0 +1,831 @@
+Can't create, edit, or upload … Not enough storage. Get 100 GB of storage for ₹130.00 ₹35.00/month for 2 months.
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin: 10px;
+    max-width: 100vw;
+}
+
+.heading a {
+    text-decoration: none;
+}
+
+.navlinks a {
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.search_bar input {
+    border: none;
+    border-radius: 20px;
+    padding: 4%;
+    width: 75%
+        /* Adjusted width to fit within the container */
+}
+
+
+
+.search_bar button {
+    border: none;
+    border-radius: 50%;
+    padding: 4%;
+    background-color: #fff;
+    cursor: pointer;
+    /* Added width for the button */
+}
+
+.search_bar {
+    border: solid #dfdfdf 2px;
+    border-radius: 20px;
+    width: 40vh;
+
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 300px auto 500px;
+    gap: 10px;
+    padding: 0px;
+    background-color: #8cecff;
+}
+
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 10px;
+    padding: 0px;
+    background-color: #caf0f8;
+}
+
+.search-grid .info {
+    height: 90vh;
+    background-color: #8cecff;
+}
+
+.home-grid>div {
+    background-color: #caf0f8;
+    height: 87.5vh;
+}
+
+.home-grid .posts {
+    background-color: #8cecff;
+}
+
+.info {
+    padding: 5%;
+    overflow-y: scroll;
+}
+
+.more_options {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.user_info {
+    margin: 0 25%;
+}
+
+.user_image {
+    width: 100px;
+    height: 100px;
+    margin: 0 12%;
+}
+
+.userInfo {
+    display: grid;
+    place-content: center;
+}
+
+.user_image img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user_name {
+    font-size: 1.5rem;
+    width: fit-content;
+    text-align: center;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.user_stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+.icon_button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.icon_button:hover {
+    background-color: #0056b3;
+}
+
+.user_posts_count,
+.user_friends_count {
+    font-size: 1.5rem;
+}
+
+.user_posts,
+.user_friends {
+    width: 70px;
+    height: 70px;
+}
+
+.bio {
+    margin: 10px 0;
+}
+
+.bio textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    height: fit-content;
+    font-size: medium;
+}
+
+.bioEditButton {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    /* Optional: Set max-width for responsiveness */
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.bioEditButton:hover {
+    background-color: #0056b3;
+}
+
+
+.connections {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.info2 {
+    padding: 5%;
+}
+
+.info2Heading {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.posts {
+    overflow-y: scroll;
+    margin-left: 20%;
+    margin-right: 13%;
+    padding: 2.5%;
+
+}
+
+.posts::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.posts::-webkit-scrollbar-thumb {
+    background-color: #88888896;
+}
+
+
+/* posts css  */
+.user_post_info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.user_post_details {
+    display: flex;
+    gap: 10px;
+}
+
+.user_post_profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post_template {
+    margin-bottom: 15px;
+    display: flex;
+    width: 100%;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    flex-direction: column;
+    min-height: 200px;
+    /* Minimum height for the template */
+    max-height: 600px;
+    /* Maximum height for the template */
+}
+
+.post_content {
+    width: 100%;
+    max-height: 400px;
+    /* Maximum height for the image */
+    overflow: hidden;
+    /* Hide overflow to keep content contained */
+}
+
+.post_content_img {
+    width: 100%;
+    height: auto;
+    /* Let the height adjust based on the width */
+    max-height: 400px;
+    /* Maximum height for the image */
+    object-fit: contain;
+}
+
+.post_description {
+    padding: 10px;
+    overflow: hidden;
+    /* Hide overflow to keep content contained */
+}
+
+.post_buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5%;
+    padding-bottom: 2%;
+}
+
+.post_buttons button {
+    padding: 5%;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.group_1 {
+    display: flex;
+    gap: 20px;
+}
+
+.like,
+.comment,
+.share {
+    text-align: center;
+    border: none;
+    width: 33%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.like .fa-solid,
+.comment .fa-solid,
+.share .fa-solid {
+    font-size: 1.5rem;
+}
+
+.like button:hover,
+.comments button:hover,
+.share button:hover {
+
+    transform: scale(1.25);
+}
+
+/* right grid css */
+
+
+.new_users {
+    display: flex;
+    gap: 20px;
+    padding: 0 5%;
+}
+
+.new_user_template {
+    display: grid;
+    place-content: center;
+}
+
+.new_user_profile {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.new_user_profile_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.new_user_add {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.new_user_add .acceptButton {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: #007bff;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.new_user_add .acceptButton:hover {
+    background-color: #0056b3;
+
+}
+
+.friend_add {
+    display: flex;
+    justify-content: space-around
+}
+
+.new_users,
+.requests_div,
+.friends_div {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.add .acceptButton,
+.cancel .declineButton,
+.add_friend_button {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: #007bff;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.add .acceptButton:hover,
+.cancel .declineButton:hover,
+.add_friend_button:hover {
+    background-color: #0056b3;
+
+}
+
+
+.acceted_friend {
+    width: 90px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.reject_friend {
+    width: 90px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 1%;
+
+}
+
+.not_accepted,
+.accepted {
+    display: none;
+}
+
+
+
+.addPostsPage {
+    background-color: #fff;
+}
+
+.addPostsHeading {
+    text-align: center;
+}
+
+.addPostsPage textarea {
+    width: 100%;
+    height: 75px;
+    resize: none;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: medium;
+}
+
+.image_preview_Div {
+
+    overflow: hidden;
+    /* Ensures the image doesn't overflow the container */
+}
+
+#imagePreview {
+    width: 300px;
+    height: 300px;
+    /* Allow the image to shrink if it's larger than the container */
+    object-fit: contain;
+    /* Scales the image to maintain its aspect ratio while fitting within the container */
+}
+
+/* Additional rule to prevent resizing for larger images */
+#imagePreview:is([width], [height]) {
+    max-width: none;
+    max-height: none;
+}
+
+input::file-selector-button,
+.submitPost {
+    border: none;
+    width: 100%;
+    color: #fff;
+    background-color: #007bff;
+    padding: 5%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease
+}
+
+#mediaButton {
+    margin-left: 25%;
+}
+
+.submitPost {
+    margin-top: 10px;
+    width: 47%;
+    padding: 2%;
+    margin-left: 25%;
+}
+
+input::file-selector-button:hover,
+.submitPost:hover {
+    background-color: #0056b3;
+}
+
+.addPostsPage {
+    position: fixed;
+    width: 550px;
+    padding: 1%;
+    display: none;
+    z-index: 1000;
+    border-radius: 20px;
+}
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    z-index: 999;
+    /* Ensure the overlay appears above other content */
+}
+
+.editButtons {
+    display: flex;
+    align-items: center;
+}
+
+.editButtons form {
+    margin-right: 10px;
+}
+
+.editPost,
+.deletePost {
+    width: 30px;
+    border: none;
+    border-radius: 50px;
+    height: 30px;
+    color: #030303;
+    background-color: #fff;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.search_results_list {
+    margin: 2.5%;
+    overflow-y: scroll;
+    max-height: 82vh;
+    display: flex;
+    gap: 50px;
+    max-width: 80vw;
+    flex-wrap: wrap;
+
+}
+
+.search_result_name {
+    max-width: 210px;
+    word-wrap: break-word;
+}
+
+.search_result_image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.search_result_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.search_result_button {
+    display: flex;
+    justify-content: space-around;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+.mobile_tabbar {
+    display: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-duration: 0.2s;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.menu button {
+    border: none;
+    background-color: transparent;
+}
+
+.menu img {
+    transition-duration: 0.2s;
+}
+
+.menu a:hover img {
+    animation: left-edge 0.5s linear 1;
+    filter: invert(72%) sepia(20%) saturate(747%) hue-rotate(174deg) brightness(96%) contrast(97%);
+}
+
+.menu img:hover .menu {
+    box-shadow: 0px 10px 5px rgb(100, 187, 241, 0.1);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: auto;
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dot {
+    animation: dot-anim 8s linear infinite;
+}
+
+/* Animations */
+
+@keyframes dot-anim {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes left-edge {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    35% {
+        transform: rotate(-25deg);
+    }
+
+    75% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+    .mobile_tabbar {
+        display: block;
+    }
+
+    .home-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info,
+    .info2 {
+        display: none;
+    }
+
+    .posts {
+        margin: 0;
+    }
+
+    .post_template {
+        border-radius: 30px;
+    }
+
+    .posts::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .search_result_image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .search-grid {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .search_result_name {
+        max-width: 110px;
+        word-wrap: break-word;
+        font-size: 10px;
+    }
+
+    .search_results_list {
+        margin: 2.5%;
+        overflow-y: scroll;
+        max-height: 82vh;
+        display: flex;
+        gap: 40px;
+        max-width: 100vw;
+        flex-wrap: wrap;
+    }
+
+    .navbar .heading,
+    .navbar .navlinks {
+        display: none;
+    }
+
+}
+
+
+
+/* Style for the comment section */
+.comments {
+    margin-top: 10px;
+}
+
+.comment_item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.comment_user {
+    display: flex;
+    align-items: center;
+}
+
+.comment_user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* to make the image circular */
+    margin-right: 10px;
+}
+
+.comment_user span {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment_text p {
+    margin: 5px 0;
+}
+
+.comment_date span {
+    color: #888;
+    font-size: 0.9em;
+}
+
+
+/* Style for the comment form */
+form.comment_form {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.comment_form input[type="text"] {
+    flex: 1;
+    /* Take remaining space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.comment_form button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment_form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.comment_form input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.see_all_comments_button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.see_all_comments_button_btn {
+    background-color: #4CAF50;
+    /* Green background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer cursor */
+    border-radius: 5px;
+}
+
+.see_all_comments_button_btn:hover {
+    background-color: #45a049;
+
+}

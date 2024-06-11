@@ -1,0 +1,524 @@
+
+.mainPage {
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    gap: 20px;
+}
+
+.userInformation{
+    max-width:400px;
+    width: 400px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    
+   
+}
+
+.Info {
+    max-width: 400px;
+    flex-wrap: wrap;
+    display: flex;
+    border : solid 2px black;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.Info h1{ 
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.bio p {
+    text-align: justify;
+}
+
+.bioEditButton {
+    width: 100%;
+    border: none;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.friendRequests , .friends{
+    width: 100%;
+border : solid 2px black;
+  padding: 5% 0;
+  border-radius: 10px;
+}
+.heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.requests  {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.friendList {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+  
+}
+
+.friendRequest , .friend{
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: auto;
+}
+.friendRequestImage {
+    width: 100px;
+    height: 100px;
+}
+
+.friendRequestImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+
+}
+
+.friendRequestInfo h2{
+    font-size: medium;
+}
+
+.accepted h2 , .not_accepted h2{
+    font-size: medium;
+}
+
+.friendImage {
+    width: 120px;
+    height: 120px;
+}
+
+.friendImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.friendsInfo h2{
+    font-size: small;
+    text-align: left;
+}
+
+
+
+
+.addPosts{
+    width: 95%;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 2%;
+    margin-bottom: 5%;
+
+}
+
+.addPost {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.profileIconDiv {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+}
+
+.profileIcon{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.postText {
+    width:100%;
+}
+
+
+.PostsAdd {
+    width: 90%;
+}
+.postText textarea {
+    width: 100%;
+    padding: 3% 0;
+    border: none;
+    text-align: center;
+    border-radius: 50px;
+    resize: none;
+    background-color: #f2f2f2;
+}
+
+
+.Buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Buttons button {
+ 
+    width: 100px;
+    border: none;
+    border-radius: 50px;
+    padding: 2%;
+    height: 40px;
+    background-color: rgb(73, 73, 255);
+    color: #f2f2f2;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.Buttons button:hover {
+    border : solid 2px rgb(73, 73, 255);
+    color: rgb(73, 73, 255);
+    background-color: #f2f2f2;
+    border-color: rgb(73, 73, 255);;
+    
+}
+
+.userPosts {
+    overflow: hidden;
+    background-color: aliceblue;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+.userImageDiv {
+    height: 50px;
+    width: 50px;
+}
+
+
+.userInfoDetails {
+    display: flex;
+    gap: 20px;
+}
+.userImageDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.editButtons {
+    display: flex; 
+    align-items: center;
+}
+
+.editButtons form {
+    margin-right: 10px; 
+}
+
+.userDetails {
+    margin:  2%;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.userName h2 {
+    margin: 0;
+    font-size: medium;
+    font-weight:1000;
+}
+
+.date p {
+    margin : 0;
+    font-size: small;
+}
+
+.usersPosts {
+    max-width: 500px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.Post {
+    font-size: x-large;
+    max-height: 500px;
+}
+
+.Post p {
+    font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    font-weight: 200;
+    margin: 0 10px;
+    color: #313131;
+}
+
+.post {
+    border: solid 2px black;
+    border-radius: 10px;
+    margin : 5% 0;
+}
+.likeComments {
+    display: flex;
+    gap: 10px;
+    margin: 1.5% 0;
+    justify-content: space-between;
+  }
+  
+  .likeComments button {
+    padding: 5%;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s ease-in-out ;
+  }
+  .like, .comments, .share {
+    text-align: center;
+    border: none;
+    width: 33%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .like button:hover, .comments button:hover, .share button:hover {
+   
+    transform: scale(1.25);
+}
+
+  
+  .like.active {
+    background-color: #e74c3c; /* Red background when active (pressed) */
+  }
+  
+  /* Font Awesome Icons */
+  .like i, .comments i, .share i {
+    font-size: 1.5rem;
+    color: rgb(21, 21, 21);
+  }
+
+
+
+
+.mainPage {
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    gap: 20px;
+}
+
+.userInformation {
+    max-width: 400px;
+    width: 400px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+
+.userInformation {
+    height: 150vh;
+    overflow-y: auto;
+}
+
+
+.usersPosts {
+    max-width: 600px;
+    width: 100%;
+    overflow: auto;
+}
+
+.usersPosts {
+    flex: 1;
+    height: 153vh;
+    overflow-y: auto;
+}
+
+.acceptButton , .declineButton {
+    width: 35px;
+    border: none;
+    border-radius: 50px;
+    height: 35px;
+    background-color: rgb(73, 73, 255);
+    color: #f2f2f2;
+    transition: .2s ease-in-out ;
+    cursor: pointer;
+}
+
+.acceted_friend{
+    background-color: rgb(73, 73, 255);
+    color: #f2f2f2;
+    padding : 3%;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Ubuntu', sans-serif; 
+
+}
+
+.accepted , .not_accepted{
+    display: none;
+}
+
+.reject_friend{
+    background-color:red;
+    color: #f2f2f2;
+    padding : 3%;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Ubuntu', sans-serif; 
+
+}
+
+.acceptButton:hover , .declineButton:hover {
+    border : solid 2px rgb(73, 73, 255);
+    color: rgb(73, 73, 255);
+    background-color: #f2f2f2;
+    border-color: rgb(73, 73, 255);;
+}
+
+
+.addPostsPage {
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+    display: none;
+}
+
+.addPostsHeading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#postForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#postText {
+    height: 80px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#imagePreview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: none;
+}
+
+#mediaButtonLabel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#mediaButtonLabel:hover {
+    background-color: #2980b9;
+}
+
+.submitPost {
+    padding: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitPost:hover {
+    background-color: #c0392b;
+}
+
+.close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.postImage {
+    width: 100%;
+    height: 500px;
+}
+
+.postImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.editPost, .deletePost {
+    width: 30px;
+    border: none;
+    border-radius: 50px;
+    height: 30px;
+    color: #030303;
+    background-color: #fff;
+    cursor: pointer;
+    transition: .2s ease-in-out ;
+}
+
+.editPost:hover, .deletePost:hover  {
+    color: #fff;
+    background-color: #0015ff;
+    border-color: #030303;
+
+}
+
+.bio {
+    width: 390px;
+}
+
+.bio textarea {
+    width: 100%;
+    padding: 3% 0;
+    border: none;
+    resize: none;
+    text-align: justify;
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 1rem;
+    max-height: 100px;
+    outline: none;
+
+}
+
+.active {
+    color: red;
+}
+
+

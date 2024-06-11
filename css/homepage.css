@@ -1,0 +1,1026 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #282828;
+    --accent-color: #fffd00;
+}
+
+body {
+    background-color: var(--primary-color);
+    padding: 1%;
+    color: #f1f0f0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    color: var(--secondary-color);
+}
+
+
+
+.comment-sent {
+    display: none;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.8fr 2fr 1.2fr;
+    gap: 10px;
+}
+
+.friend-container {
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.component {
+    padding: 10px;
+}
+
+.inner-component {
+    background-color: var(--secondary-color);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.edit-delete {
+    display: flex;
+    gap: 10%;
+    width: 30%;
+    justify-content: end;
+
+}
+
+.view-other-users:hover {
+    color: var(--accent-color);
+
+}
+
+.logo {
+    height: 100%;
+    width: 100%;
+}
+
+.logo-search-bar {
+    display: flex;
+    width: 100%;
+    gap: 2%;
+}
+
+.search-bar {
+    width: 20%;
+}
+
+.search-input {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 4%;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+}
+
+.user-profile-info {
+    margin-top: 10%;
+    display: flex;
+    gap: 0.4%;
+    padding: 2%;
+    justify-content: space-around;
+}
+
+.user-profile-image {
+    width: 25%;
+    padding-top: 25%;
+    /* This maintains the 1:1 aspect ratio */
+    position: relative;
+    border: #1a1a1a solid 7px;
+    border-radius: 32%;
+    overflow: hidden;
+    /* Ensure that the image does not overflow the container */
+}
+
+.user-profile-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintains the aspect ratio of the image */
+    border-radius: 28%;
+}
+
+.count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.user-posts-info,
+.user-friends-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name-bio {
+    padding: 2%;
+}
+
+.user-name {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.user-bio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.bio {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    cursor: default;
+    background-color: var(--secondary-color);
+    border: none;
+    color: #ebe1e1;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.break-line {
+    border-color: #1a1a1a;
+}
+
+.view-profile {
+    width: 100%;
+    padding: 2%;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    color: #f1f0f0;
+    border: none;
+    cursor: pointer;
+}
+
+.view-profile:hover {
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile-button {
+    padding: 5%;
+    padding-bottom: 10%;
+}
+
+.post-content-userimage,
+.post-uploader-img {
+    width: 40px;
+    height: 40px;
+}
+
+.post-user-image,
+.post-uploader-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    object-fit: cover;
+}
+
+.post-content-userinfo {
+    display: flex;
+    gap: 5%;
+}
+
+.post-info {
+    width: 85%;
+}
+
+.post-info-input {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 2.5%;
+    border-radius: 15px;
+    border: none;
+}
+
+.post-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    padding: 2.5% 2.5% 0;
+}
+
+.upload-media {
+    display: flex;
+    justify-content: end;
+    gap: 5%;
+    padding-left: 10%;
+}
+
+.media-button {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+}
+
+.post-btn {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #1c1b1b;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    font-weight: bold;
+}
+
+.media-button:hover {
+    background-color: #000000;
+}
+
+.post-btn:hover {
+    background-color: #dede0f;
+}
+
+.posts-container {
+    margin-top: 5%;
+}
+
+.post-user-info {
+    display: flex;
+    gap: 2.5%;
+
+}
+
+.uploader-username {
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+.username {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.time-upload {
+    font-size: smaller;
+    color: var(--accent-color);
+}
+
+.time-upload ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 2%;
+}
+
+
+.post-content-info {
+    margin: 2.5% 0;
+}
+
+.post-caption {
+    text-align: justify;
+}
+
+.post-media {
+    margin: 3.5% 0;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.post-media img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.post-reactions {
+    display: flex;
+    gap: 5%;
+    padding: 2.5%;
+    font-size: larger;
+}
+
+.like,
+.comment,
+.share {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    padding: 1%;
+    text-align: center;
+    border: var(--secondary-color) solid 1px;
+}
+
+.edit-post,
+.delete-post {
+    font-size: 1.25rem;
+}
+
+.deletePost {
+    background: none;
+    font-size: 1.25rem;
+    border: none;
+    color: #f1f0f0;
+}
+
+.delete-post :hover {
+    color: red;
+    cursor: pointer;
+    transition: color ease-in-out;
+}
+
+.edit-post:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.like:hover,
+.comment:hover,
+.share:hover {
+    color: var(--accent-color);
+    border: var(--accent-color) solid 1px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.post-comments {
+    display: flex;
+    gap: 2.5%;
+    padding: 2.5%;
+}
+
+.comment-text-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-field {
+    flex: 1;
+    padding: 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    width: 100%;
+    border: none;
+}
+
+.comment-button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    background-color: #dede0f;
+    transition: background-color 0.3s ease;
+}
+
+
+.no-requests {
+    text-align: center;
+    margin: 5% 0;
+}
+
+.view-friends-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post {
+    margin: 2.5% 0;
+}
+
+.third-components,
+.friend-requests {
+    padding: 5%;
+}
+
+.new-user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-user-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.add-friend,
+.search {
+    width: 40px;
+    height: 40px;
+    padding: 0 10%;
+    border: var(--primary-color) solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-friend:hover,
+.search:hover {
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    border: var(--accent-color) solid 1px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.accept-view-user {
+    display: flex;
+    gap: 20px;
+}
+
+.new-user-component {
+    display: flex;
+    gap: 20px;
+}
+
+.user-template {
+    background-color: var(--primary-color);
+    display: flex;
+    padding: 3%;
+    border-radius: 20px;
+    margin: 2.5% 0;
+    justify-content: space-between;
+}
+
+.no-users-message {
+    text-align: center;
+    margin: 5% 0;
+    color: var(--accent-color);
+}
+
+.new-user-name {
+    font-size: 1.20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.requests {
+    margin: 5% 0;
+}
+
+.user-template-request {
+    background-color: var(--primary-color);
+    padding: 3%;
+    border-radius: 20px;
+    margin: 5% 0 2.5%;
+}
+
+.add-reject-friend {
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 0;
+}
+
+.friends-page {
+    margin: 0;
+    gap: 10%;
+}
+
+.add-user button,
+.reject-friend button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-user button:hover,
+.reject-friend button:hover {
+    background-color: #dede0f;
+}
+
+.friend-request h2,
+.new-users h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #f1f0f0;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+
+
+.edit-post-view {
+    display: none;
+    position: fixed;
+    top: 50%;
+    width: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2.5%;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    z-index: 10000;
+}
+
+.close-edit-post {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.previous-caption-data,
+.previous-caption-heading {
+    margin: 2.5% 0;
+    text-align: center;
+}
+
+.edit-post-caption-text {
+    width: 45%;
+    color: var(--primary-color);
+    padding: 2.5%;
+    border-radius: 15px;
+    border: none;
+    margin: 2.5% 0;
+
+}
+
+.edit-post-image,
+.edit-post-caption {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-heading {
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 2.5% 0;
+}
+
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .post-media {
+        height: 200px;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .upload-media,
+    .post-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comment-field {
+        width: 80%;
+    }
+
+    .comment-button {
+        width: auto;
+    }
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.share-options-avaliable {
+    width: 30%;
+    padding: 3.5%;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+}
+
+.close-button {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+
+}
+
+.options {
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.options i {
+    font-size: xx-large;
+    cursor: pointer;
+    border: var(--secondary-color) solid 1px;
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+}
+
+.options .fa-whatsapp:hover {
+    color: rgb(37, 211, 102);
+    border: rgb(37, 211, 102) solid 1px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.options .fa-x-twitter:hover {
+    color: var(--accent-color);
+    border: var(--accent-color) solid 1px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.options .fa-copy:hover {
+    border: blue solid 1px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.share-text {
+    padding: 2.5%;
+    text-align: center;
+
+}
+
+.share-text-def {
+    text-align: center;
+}
+
+/* CSS for the overlay that covers the entire screen */
+.cover-element {
+    position: fixed;
+    /* Use fixed instead of absolute to cover the entire screen */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    /* 100% of the viewport height */
+    width: 100vw;
+    /* 100% of the viewport width */
+    background-color: #000;
+    opacity: 0.8;
+    z-index: 9999;
+    display: none;
+    /* Initially hidden */
+}
+
+
+
+
+/* CSS for the share options container */
+.share-options-avaliable {
+    position: fixed;
+    /* Use fixed to keep it in the viewport */
+    top: 25%;
+    left: 40%;
+    transform: translate(-25%, -25%);
+    /* Center the element */
+    z-index: 10000;
+    background-color: var(--secondary-color);
+    /* Background color for the share options */
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    /* Initially hidden */
+}
+
+/* CSS for the view all comments overlay */
+.view-all-comments {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10000;
+    /* Initially hidden */
+    display: none;
+    overflow-y: auto;
+    /* Enable scrolling if content overflows */
+    width: 100vw;
+}
+
+
+.view-all-comments::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* CSS for the close button */
+.close-comments {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* CSS for the comments container */
+.viewcomments {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+}
+
+/* CSS for individual comment */
+.view-comment {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.view-comment:last-child {
+    border-bottom: none;
+    /* Remove border for the last comment */
+}
+
+/* CSS for comment user image */
+.view-comment-user-image {
+    margin-right: 10px;
+}
+
+.comment-user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CSS for comment user info */
+.view-comment-user-info {
+    flex-grow: 1;
+}
+
+.view-comment-username {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.view-comment-time {
+    font-size: smaller;
+    color: var(--accent-color);
+
+}
+
+.view-requests-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    text-align: end;
+}
+
+.view-comment-text {
+    color: #bdbdbd;
+}
+
+.friends-req-only-mobile {
+    display: none;
+}
+
+#previewContainer {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.media-preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .post-content-userinfo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit-post-view {
+        width: 90%;
+    }
+
+    .edit-post-caption-text {
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .uploader-username {
+        width: 70%;
+    }
+
+    .edit-delete {
+        width: 20%;
+    }
+
+    .post-info {
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    .post-info-input {
+        padding: 3.5% 5%;
+        width: 90%;
+    }
+
+    .post-media {
+        height: 150px;
+    }
+
+    .search-input,
+    .comment-field {
+        width: 100%;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+
+    .third-components {
+        display: none
+    }
+
+    .friend-requests {
+        display: block;
+    }
+
+    .users-component {
+        display: block;
+    }
+
+    .post-options,
+    .upload-media {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .post-options {
+        justify-content: center;
+    }
+
+    .share-options-avaliable {
+        width: 80%;
+        left: 27%;
+    }
+
+    .view-all-comments {
+        left: 0;
+    }
+
+    .view-friends-page {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .req-only {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .req-only .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .new-users-req-only {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .template-req-only {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .component-req-only {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+    }
+
+    .image-req-only {
+        width: 60px;
+        height: 60px;
+    }
+
+    .image-req-only img {
+        /* margin-right: 10px; */
+        width: 100%;
+        height: 100%;
+        border-radius: 35%;
+    }
+
+    .username-req-only span {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .friends-req-only {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .friends-req-only .add-req-only button,
+    .friends-req-only .reject-req-only button {
+        padding: 8px 12px;
+        font-size: 14px;
+        width: 50px;
+        border-radius: 50%;
+    }
+
+    .friends-req-only-mobile {
+        display: flex;
+        gap: 10px;
+    }
+
+    .friends-req-only {
+        display: none;
+
+    }
+
+}

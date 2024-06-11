@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #ffffff 50%, #3498db 50%);
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-side {
+    flex: 1;
+    padding: 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#fileInput {
+    display: none;
+}
+
+.upload-btn-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+}
+
+.btn {
+    border: 2px solid gray;
+    color: #2980b9;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.right-side {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.submit {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 160px 10px 160px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.submit:hover {
+    background-color: #2980b9;
+}
+
+.create {
+    background-color: green;
+    color: #fff;
+    padding: 10px 110px 10px 110px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.create:hover {
+    background-color: #2980b9;
+}
+
+.choose {
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+}
+
+#forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 450px) {
+    .container {
+        border-radius: 0;
+    }
+
+    .left-side,
+    .right-side {
+        padding: 10px;
+    }
+
+    .btn {
+        border-radius: 8px;
+    }
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 500px) {
+    body {
+        background: linear-gradient(to top, #3498db 75%, #ffffff 25%);
+    }
+
+    .container {
+        flex-direction: column;
+        transform: scale(0.9);
+        border-radius: 30px;
+        position: absolute;
+        top: 10%;
+        padding-bottom: 3%;
+    }
+
+}
