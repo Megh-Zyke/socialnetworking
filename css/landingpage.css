@@ -1,0 +1,202 @@
+/* landingpage.css */
+:root {
+    --primary-color: #1a1a1a;
+    /* Dark background */
+    --secondary-color: #282828;
+    /* Slightly lighter sections */
+    --accent-color: #fffd00;
+    /* Bright yellow accent */
+    --text-color: #ffffff;
+    /* White text */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+header ul li a.login-button,
+header ul li a.signup-button {
+    background-color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--primary-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: var(--secondary-color);
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    font-size: 2rem;
+    padding-top: 5%;
+}
+
+.heading h1 {
+    margin: 0;
+}
+
+.feature-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero .cta-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.carousel-container {
+    width: 90%;
+    padding: 5%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    gap: 20px;
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.login-signup-btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.title {
+    font-family: "Playwrite AR", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.carousel div {
+    flex: 0 0 auto;
+    width: 30%;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.logo-bg {
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.features,
+.about,
+.contact {
+    text-align: center;
+    background-color: var(--secondary-color);
+}
+
+.features h2,
+.about h2,
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.feature {
+    margin: 20px 0;
+}
+
+.feature img {
+    width: 300px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+}

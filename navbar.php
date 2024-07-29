@@ -24,7 +24,7 @@
       <div class="logo-search-bar">
         <div class="logo-image">
           <a href="home-page.php">
-          <img src="images/logo.jpg" alt="" class="logo" />
+          <img src="images/logo.png" alt="" class="logo" />
           </a>
           
         </div>
