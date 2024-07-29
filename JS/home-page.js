@@ -118,7 +118,7 @@ if (copy) {
 document.getElementById("copyLinkLogo").addEventListener("click", function () {
   var link =
     window.location.origin +
-    "/post_details.php?post_id=?njz" +
+    "/post-details.php?post_id=?njz" +
     currentPostId +
     "?Lkkj";
   navigator.clipboard.writeText(link).then(
@@ -151,7 +151,7 @@ document.getElementById("twitterButton").addEventListener("click", function () {
   // URL of the post you want to share
   var postUrl =
     window.location.origin +
-    "/post_details.php?post_id=Sn?uiW" +
+    "/post-details.php?post_id=Sn?uiW" +
     currentPostId +
     "#Kibl";
 
@@ -206,6 +206,34 @@ function changeColor(postId) {
   } else {
     likeBtn.style.color = "#fffd00";
   }
+}
+
+function addFriend(user_Id) {
+  console.log("Adding Friend Id " + user_Id);
+  var xhr = new XMLHttpRequest();
+
+  var acceptButton = document.getElementById(user_Id);
+  console.log(acceptButton);
+
+  acceptButton.classList.remove("fa-plus");
+  acceptButton.classList.add("fa-paper-plane");
+  xhr.open("POST", "send_requests.php", true);
+
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+      } else {
+        console.error("Failed to add friend : " + xhr.status);
+      }
+    }
+  };
+
+  var data = JSON.stringify({ user_id: user_Id });
+  console.log(data);
+  xhr.send(data);
 }
 
 function viewOtherUsers(user_id) {

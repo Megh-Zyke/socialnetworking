@@ -18,7 +18,6 @@ if (isset($_GET['user-id'])) {
     exit();
 }
 
-
 if ($current_user_id == $selected_user) {
     header('Location: user-page.php');
     exit();
@@ -55,11 +54,42 @@ $friends_number->bind_result($friends_count_list, $posts_count);
 $friends_number->fetch();
 $friends_number->close();
 $decoded_friends = json_decode($friends_count_list, true);
+
 if ($decoded_friends == null) {
     $decoded_friends = array();
+    $decoded_friends[] = $selected_user;
 }
-$friends_count = count($decoded_friends);
+$friends_count = count($decoded_friends) - 1;
+
+
+$friends_number_user = $conn->prepare("SELECT friends FROM users WHERE user_id = ?");
+$friends_number_user->bind_param("i", $current_user_id);
+$friends_number_user->execute();
+$friends_number_user->bind_result($friends_count_list_user);
+$friends_number_user->fetch();
+$friends_number_user->close();
+$decoded_friends_user = json_decode($friends_count_list_user, true);
+if ($decoded_friends_user == null) {
+    $decoded_friends_user = array();
+}
+
+
+$requests_sent = $conn->prepare("SELECT sender_id FROM friend_requests WHERE recipient_id = ?;");
+$requests_sent->bind_param("i", $current_user_id); 
+$requests_sent->execute();
+$requests_sent->bind_result($sender_id);
+
+$requests_sent_array = [];
+while ($requests_sent->fetch()) {
+    $requests_sent_array[] = $sender_id;
+}
+// Check if the array is empty and initialize if needed
+if (empty($requests_sent_array)) {
+    $requests_sent_array = [];
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -389,21 +419,25 @@ $get_comments->close();
 
           <div class="new-users">
           <?php
+
                 //Fetch users from database
                 $users = $conn->prepare("SELECT user_id, first_name, last_name, profile_image_url
                 FROM users u
                 LEFT JOIN friend_requests fr ON u.user_id = fr.recipient_id AND fr.status = 'pending'
                 WHERE user_id != ?
+                AND u.approved = 1
                 AND fr.request_id IS NULL -- Exclude users with pending friend requests
                 ORDER BY user_id DESC 
                 LIMIT 5;");
                 $users->bind_param("i", $current_user_id);
                 $users->execute();
                 $users->bind_result($db_user_id, $fname, $lname, $profile_image_url);
-
-                ?>
-                <?php while ($users->fetch()) {
-                   if(!in_array($db_user_id, $decoded_friends_user)){ ?>
+               
+                ?>                
+                <?php
+                 while ($users->fetch()) { 
+                  if(!in_array($db_user_id, $decoded_friends_user))  {
+                  ?>
             <!-- user templates starts here -->
             <div class="user-template">
               <div class="new-user-component">
@@ -417,12 +451,24 @@ $get_comments->close();
               </div>
 
               <div class="accept-view-user">
+
+                <?php 
+                if (!in_array($db_user_id, $requests_sent_array)) {
+                ?>
                 <div class="add-friend" onclick="addFriend(<?php echo $db_user_id ?>)">
                 <i id="<?php echo $db_user_id ?>"
                 class="fa-solid fa-plus <?php echo $db_user_id ?>"></i>
                 </div>
+
+                <?php } else { ?>
+                  <div class="add-friend">
+                <i id="<?php echo $db_user_id ?>"
+                class="fa-solid fa-paper-plane <?php echo $db_user_id ?>"></i>
+                </div>
+                <?php } ?>
+
                 <div class="search">
-                  <i class="fa-solid fa-magnifying-glass" onclick="viewOtherUsers(<?php echo $db_user_id ?>)"></i>
+                  <i class="fa-solid fa-magnifying-glass"  onclick="viewOtherUsers(<?php echo $db_user_id ?>)"></i>
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ $decoded_friends = json_decode($friends_count_list, true);
 if ($decoded_friends == null) {
     $decoded_friends = array();
 }
-$friends_count = count($decoded_friends);
+$friends_count = count($decoded_friends) ;
 ?>
 
 <!DOCTYPE html>
@@ -76,17 +76,16 @@ $friends_count = count($decoded_friends);
           <div class="user-name-bio">
             <div class="user-name">---  <?php echo $first_name . " " . $last_name ?> ---</div>
             <div class="user-bio">
-              <textarea readonly class="bio" id="">
+              <textarea readonly class="bio" id="bio-info">
               <?php echo  ltrim($default_bio) ?>
-            </textarea
-              >
+            </textarea >
             </div>
           </div>
 
           <hr class="break-line" />
 
           <div class="view-profile-button">
-            <button class="view-profile">Edit Bio</button>
+            <button class="view-profile" onclick="openEditBioView()">Edit Bio</button>
           </div>
         </div>
 
@@ -466,6 +465,34 @@ $get_comments->close();
     </div>
 
 
+    <div class="edit-bio-view">
+      <div class="editBioContainer">
+        <div class="close-edit-bio">
+          <i class="fa-solid fa-x" onclick="closeEditBio()"></i>
+          </div>
+        <div class="edit-bio-heading">
+          <h2>Edit your bio !</h2>
+
+          </div>
+          <div class="previous-bio">
+            <div class="previous-bio-heading">
+              <h3>Previous Bio</h3>
+            </div>
+            <div class="previous-bio-data">
+            </div>
+            <div class="edit-bio-content">
+          <div class="edit-bio-caption">
+            <input type="hidden" class="bio-id-edit-bio" name="bioId" value = "">
+            <textarea class="edit-bio-caption-text" id="edit-bio-caption" name = "bioText"></textarea>
+          </div>
+          <div class="edit-bio-image">
+              <button class="media-button bio-btn" id="edit-bio-btn"  onclick = "saveBio()">Submit</button>
+            </div>
+          </div>
+                  
+          </div>  
+        </div>
+    </div>
 
     <div class="edit-post-view">
       <div class="edit-post-container">
@@ -501,9 +528,10 @@ $get_comments->close();
 
 
     </div>
+    <script src="js/home-page.js" defer></script>
+<script src="js/user-page.js" defer></script>
   </body>
 
 
-<script src="js/home-page.js" defer></script>
-<script src="js/user-page.js" defer></script>
+
 </html>

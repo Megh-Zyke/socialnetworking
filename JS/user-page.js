@@ -18,9 +18,52 @@ function openEditView(postId) {
   }
 }
 
+function openEditBioView() {
+  const editView = document.querySelector(".edit-bio-view");
+  editView.style.display = "block";
+  const coverElement = document.querySelector(".cover-element");
+  coverElement.style.display = "block";
+  const bioElement = document.querySelector("#bio-info");
+  const bioText = bioElement.textContent.trim();
+  console.log(bioText);
+  document.querySelector(".previous-bio-data").innerHTML = bioText;
+}
+
 function closeEditView() {
   const editView = document.querySelector(".edit-post-view");
   editView.style.display = "none";
   const coverElement = document.querySelector(".cover-element");
   coverElement.style.display = "none";
+}
+
+function closeEditBio() {
+  const editView = document.querySelector(".edit-bio-view");
+  editView.style.display = "none";
+  const coverElement = document.querySelector(".cover-element");
+  coverElement.style.display = "none";
+}
+
+function saveBio() {
+  var bioElement = document.querySelector(".edit-bio-caption-text");
+  var newBio = bioElement.value.trim();
+
+  document.querySelector(".bio").value = newBio;
+
+  const closeBtn = document.querySelector(".close-edit-bio");
+  closeBtn.click();
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "update_bio.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        console.log("Bio updated successfully");
+        closeEditBio();
+      } else {
+        console.error("Error updating bio: " + xhr.responseText);
+      }
+    }
+  };
+  xhr.send("bio=" + encodeURIComponent(newBio));
 }

@@ -29,6 +29,24 @@ if ($decoded_friends == null) {
     $decoded_friends = array();
 }
 $friends_count = count($decoded_friends);
+
+
+
+$requests_sent = $conn->prepare("SELECT sender_id FROM friend_requests WHERE recipient_id = ?;");
+$requests_sent->bind_param("i", $current_user_id); // Bind the current user ID to the query
+$requests_sent->execute();
+$requests_sent->bind_result($sender_id);
+
+$requests_sent_array = [];
+while ($requests_sent->fetch()) {
+    $requests_sent_array[] = $sender_id;
+}
+
+// Check if the array is empty and initialize if needed
+if (empty($requests_sent_array)) {
+    $requests_sent_array = [];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -220,18 +238,28 @@ while ($row = $result->fetch_assoc()) {
         $friends->close();
         
         $friends_array[] = $current_user_id;
-        foreach ($friends_array as $friend) {
-            $get_friend = $conn->prepare("SELECT * FROM posts JOIN users on (users.user_id = ?  and posts.user_id = ?)");
-            $get_friend->bind_param("ii", $friend,$friend);
-            $get_friend->execute();
-            $result = $get_friend->get_result();
+
+        $array_friends = json_encode($friends_array);
+        $array_friends = implode(",", $friends_array);
+
+        $get_friend = $conn->prepare("SELECT * FROM posts JOIN users ON users.user_id = posts.user_id WHERE users.user_id IN ($array_friends)");
+        $get_friend->execute();
+        $result = $get_friend->get_result();
             
 
-            while($row = $result->fetch_assoc()){
+        while($row = $result->fetch_assoc()){
+          $rows[] = $row;
+        }
+        
+        // Reverse the array
+        $rows = array_reverse($rows);
+        
+        // Process the reversed array
+        foreach ($rows as $row) {
 
-            if($row == null) {
-                continue;
-            }
+      if($row == null) {
+                echo "<div class='inner-component post'> No posts available </div>";
+      }
 
             ?>
 
@@ -401,7 +429,6 @@ $get_comments->close();
         <!-- comments div ends here -->
           </div>
           <?php } ?>
-          <?php } ?>
           <!-- single post ends here -->
         </div>
 
@@ -418,14 +445,16 @@ $get_comments->close();
                 FROM users u
                 LEFT JOIN friend_requests fr ON u.user_id = fr.recipient_id AND fr.status = 'pending'
                 WHERE user_id != ?
+                AND u.approved = 1
                 AND fr.request_id IS NULL -- Exclude users with pending friend requests
                 ORDER BY user_id DESC 
                 LIMIT 5;");
                 $users->bind_param("i", $current_user_id);
                 $users->execute();
                 $users->bind_result($db_user_id, $fname, $lname, $profile_image_url);
-
                 ?>
+
+                
                 <?php while ($users->fetch()) { 
                   if(!in_array($db_user_id, $decoded_friends))  {
                   ?>
@@ -442,10 +471,22 @@ $get_comments->close();
               </div>
 
               <div class="accept-view-user">
+
+                <?php 
+                if (!in_array($db_user_id, $requests_sent_array)) {
+                ?>
                 <div class="add-friend" onclick="addFriend(<?php echo $db_user_id ?>)">
                 <i id="<?php echo $db_user_id ?>"
                 class="fa-solid fa-plus <?php echo $db_user_id ?>"></i>
                 </div>
+
+                <?php } else { ?>
+                  <div class="add-friend">
+                <i id="<?php echo $db_user_id ?>"
+                class="fa-solid fa-paper-plane <?php echo $db_user_id ?>"></i>
+                </div>
+                <?php } ?>
+
                 <div class="search">
                   <i class="fa-solid fa-magnifying-glass"  onclick="viewOtherUsers(<?php echo $db_user_id ?>)"></i>
                 </div>

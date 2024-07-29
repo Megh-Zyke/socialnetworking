@@ -247,7 +247,8 @@ h1 {
     width: 100px;
 }
 
-.post-btn {
+.post-btn,
+.bio-btn {
     padding: 10px 20px;
     background-color: var(--accent-color);
     color: #1c1b1b;
@@ -263,9 +264,12 @@ h1 {
     background-color: #000000;
 }
 
-.post-btn:hover {
+.post-btn:hover,
+.bio-btn:hover {
     background-color: #dede0f;
 }
+
+
 
 .posts-container {
     margin-top: 5%;
@@ -577,8 +581,19 @@ h1 {
 
 }
 
+.edit-bio-caption-text {
+    width: 95%;
+    color: var(--primary-color);
+    padding: 2.5%;
+    border-radius: 15px;
+    border: none;
+    margin: 2.5% 0;
+
+}
+
 .edit-post-image,
-.edit-post-caption {
+.edit-post-caption,
+.edit-bio-image {
     display: flex;
     justify-content: center;
 }
@@ -849,6 +864,26 @@ body::-webkit-scrollbar {
     margin-top: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+
+.edit-bio-view {
+    display: none;
+    position: fixed;
+    top: 50%;
+    width: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2.5%;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    z-index: 10000;
+}
+
+.close-edit-bio {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {

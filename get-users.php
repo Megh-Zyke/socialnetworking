@@ -7,6 +7,41 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $current_user_id = $_SESSION['user_id'];
+
+
+$select_bio = $conn->prepare("SELECT bio , profile_image_url , first_name , last_name  FROM users WHERE user_id = ?");
+$select_bio->bind_param("i", $current_user_id);
+$select_bio->execute();
+$select_bio->bind_result($default_bio, $profile, $first_name, $last_name);
+$select_bio->fetch();
+$select_bio->close();
+
+$friends_number = $conn->prepare("SELECT users.friends , COUNT(posts.post_id)  
+                                FROM users
+                                JOIN posts ON users.user_id = ? AND posts.user_id = ?");
+$friends_number->bind_param("ii", $current_user_id, $current_user_id);
+$friends_number->execute();
+$friends_number->bind_result($friends_count_list, $posts_count);
+$friends_number->fetch();
+$friends_number->close();
+
+$decoded_friends = json_decode($friends_count_list, true);
+if ($decoded_friends == null) {
+    $decoded_friends = array();
+}
+$friends_count = count($decoded_friends);
+
+
+$requests_sent = $conn->prepare("SELECT sender_id FROM friend_requests WHERE recipient_id = ?;");
+$requests_sent->bind_param("i", $current_user_id); // Bind the current user ID to the query
+$requests_sent->execute();
+$requests_sent->bind_result($sender_id);
+
+$requests_sent_array = [];
+while ($requests_sent->fetch()) {
+    $requests_sent_array[] = $sender_id;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -70,17 +105,37 @@ $current_user_id = $_SESSION['user_id'];
               </div>
 
               <div class="accept-view-user">
-                <div class="add-friend" onclick="addFriend(<?php echo $user_id ?>)">
+                
 
                 <?php  
                  if ($user_id == $current_user_id) {
                   
                 ?>
+                <div class="add-friend" onclick="addFriend(<?php echo $user_id ?>)">
                 <i id="<?php echo $user_id ?>" class="fa-solid fa-face-smile-wink <?php echo $user_id ?>"></i>
                 <?php
                 } else { ?>
+                
+                <?php 
+                if  (in_array($user_id, $decoded_friends))  {
+                ?>
+                
+                <div class="add-friend">
+                <i id="<?php echo $user_id ?>"
+                class="fa-solid fa-user-group <?php echo $user_id ?>"></i>
+                <?php }  elseif (!in_array($user_id, $requests_sent_array)) {
+                  ?>
+
+             <div class="add-friend" onclick="addFriend(<?php echo $user_id ?>)">
                 <i id="<?php echo $user_id ?>"
                 class="fa-solid fa-plus <?php echo $user_id ?>"></i>
+
+                <?php } else { ?>
+                  <div class="add-friend">
+                <i id="<?php echo $user_id ?>"
+                class="fa-solid fa-paper-plane <?php echo $user_id ?>"></i>
+                
+                <?php } ?>        
                 <?php
                 }
                 ?>

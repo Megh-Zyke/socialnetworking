@@ -25,13 +25,13 @@ function editBio() {
 }
 
 function saveBio() {
-  var bioElement = document.querySelector(".bio textarea");
+  var bioElement = document.querySelector(".edit-bio-caption-text");
   var newBio = bioElement.value.trim();
-  bioElement.setAttribute("readonly", "readonly");
 
-  var bioButton = document.querySelector(".bioEditButton");
-  bioButton.textContent = "Edit Bio";
-  bioButton.onclick = editBio;
+  document.querySelector(".bio").value = newBio;
+
+  const closeBtn = document.querySelector(".close-edit-bio");
+  closeBtn.click();
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "update_bio.php", true);
@@ -45,7 +45,7 @@ function saveBio() {
       }
     }
   };
-  xhr.send("bio=" + encodeURIComponent(newBio)); // Send the updated bio data
+  xhr.send("bio=" + encodeURIComponent(newBio));
 }
 
 function editPost(postId) {
