@@ -16,6 +16,8 @@ $select_bio->bind_result($default_bio, $profile, $first_name, $last_name);
 $select_bio->fetch();
 $select_bio->close();
 
+$default_bio = trim($default_bio);
+
 $friends_number = $conn->prepare("SELECT users.friends , COUNT(posts.post_id)  
                                 FROM users
                                 JOIN posts ON users.user_id = ? AND posts.user_id = ?");
@@ -77,7 +79,7 @@ $friends_count = count($decoded_friends) ;
             <div class="user-name">---  <?php echo $first_name . " " . $last_name ?> ---</div>
             <div class="user-bio">
               <textarea readonly class="bio" id="bio-info">
-              <?php echo  ltrim($default_bio) ?>
+              <?php echo ($default_bio) ?>
             </textarea >
             </div>
           </div>

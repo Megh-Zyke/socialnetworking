@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
             $mail->isHTML(false);                                
             $mail->Subject = 'Password Reset Code';
-            $mail->Body    = 'Looks like you forgot your password. No worries! Click on the link below to reset your password.\n\nhttp://localhost/socialnetworking/reset-password.php?code=' . $resetCode;
+            $mail->Body    = 'Looks like you forgot your password. No worries! Click on the link below to reset your password. http://localhost/socialnetworking/reset-password.php?code=' . $resetCode;
         
             $mail->send();
             $success = "Password reset link has been sent to your email address. Please check your email!";
