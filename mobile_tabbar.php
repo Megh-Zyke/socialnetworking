@@ -1,4 +1,5 @@
-<div class="mobile_tabbar" >
+<div class="mobile_tabbar" style="flex-direction : column">
+    <div style ="display : flex;">
         <div style="display: flex; flex-direction: column; justify-content: center;">
             <form action="home-page.php" method="GET" style="margin: 0; padding: 0;">
                 <button style="background: none; border: none; cursor: pointer;">
@@ -36,5 +37,14 @@
                 </button>
             </form>
         </div>
-    </nav>
+
+    </div>
+
+    <footer>
+        <p style ="font-size: smaller;padding: 0;margin: 0;">Copyright &copy; 2024 SocialNetworking. Powered by - SRM Students.</p>
+    </footer>
 </div>
+
+
+
+
