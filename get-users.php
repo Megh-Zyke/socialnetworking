@@ -162,6 +162,9 @@ while ($requests_sent->fetch()) {
       <div class="component">
       </div>
     </div>
+
+
+    <?php include 'mobile_tabbar.php'; ?>
   </body>
 
 <script src="js/home-page.js" defer></script>

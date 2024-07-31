@@ -200,3 +200,55 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+
+/* Mobile Styles for landingpage.css */
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+    .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1%;
+    }
+
+    .hero h1 {
+        font-size: larger;
+    }
+
+    .hero-text {
+        max-width: 95%;
+        padding: 2.5%;
+    }
+
+    .logo {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero .logo-bg {
+        width: 100%;
+    }
+
+    .feature-info {
+        padding: 1%;
+    }
+
+    .feature {
+        width: 32%;
+    }
+
+    .feature img {
+        width: 100%;
+    }
+
+    .hero-text .title {
+        font-size: xx-large;
+    }
+
+    .carousel div {
+        width: 60%;
+    }
+
+}

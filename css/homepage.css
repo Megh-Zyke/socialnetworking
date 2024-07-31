@@ -605,35 +605,11 @@ h1 {
 }
 
 
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    .post-media {
-        height: 200px;
-    }
-
-    .search-input {
-        width: 80%;
-    }
-
-    .upload-media,
-    .post-options {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .comment-field {
-        width: 80%;
-    }
-
-    .comment-button {
-        width: auto;
-    }
+.mobile_tabbar {
+    display: none;
 }
+
+
 
 .navbar-top {
     display: flex;
@@ -976,6 +952,70 @@ body::-webkit-scrollbar {
         gap: 10px;
     }
 
+
+    .mobile_tabbar {
+        background-color: #282828;
+        left: 0;
+        border-radius: 30px;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+
+    }
+
+}
+
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+
+    .mobile_tabbar {
+        background-color: #282828;
+        left: 0;
+        border-radius: 30px;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin-bottom: 90px;
+    }
+
+    .post-media {
+        height: 200px;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .upload-media,
+    .post-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comment-field {
+        width: 80%;
+    }
+
+    .comment-button {
+        width: auto;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -984,6 +1024,10 @@ body::-webkit-scrollbar {
         padding: 10px;
         box-sizing: border-box;
         display: block;
+    }
+
+    .container {
+        margin-bottom: 90px;
     }
 
     .req-only .title {

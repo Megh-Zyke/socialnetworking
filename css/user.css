@@ -18,6 +18,10 @@ h1 {
 }
 
 
+.mobile_tabbar {
+    display: none;
+}
+
 
 .comment-sent {
     display: none;
@@ -543,6 +547,21 @@ h1 {
     .comment-button {
         width: auto;
     }
+
+    .mobile_tabbar {
+        background-color: #282828;
+        left: 0;
+        border-radius: 30px;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+
+    }
 }
 
 .navbar-top {
@@ -785,6 +804,21 @@ body::-webkit-scrollbar {
     }
 
 
+    .mobile_tabbar {
+        background-color: #282828;
+        left: 0;
+        border-radius: 30px;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+
+    }
+
     .uploader-username {
         width: 70%;
     }
@@ -854,6 +888,21 @@ body::-webkit-scrollbar {
         padding: 10px;
         box-sizing: border-box;
         display: block;
+    }
+
+    .mobile_tabbar {
+        background-color: #282828;
+        left: 0;
+        border-radius: 30px;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+
     }
 
     .req-only .title {

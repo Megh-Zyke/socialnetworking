@@ -508,6 +508,8 @@ $get_comments->close();
         </div>
       </div>
     </div>
+
+    <?php include 'mobile_tabbar.php'; ?>
   </body>
 
 
