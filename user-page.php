@@ -56,7 +56,7 @@ $friends_count = count($decoded_friends) ;
 
     <div class="container">
       <div class="component">
-        <div class="inner-component user-info">
+        <div class="inner-component user-component user-info">
           <!-- user profile picture and quick info -->
           <div class="user-profile-info">
             <div class="user-posts-info">

@@ -40,8 +40,8 @@
 
     </div>
 
-    <footer>
-        <p style ="font-size: smaller;padding: 0;margin: 0;">Copyright &copy; 2024 SocialNetworking. Powered by - SRM Students.</p>
+    <footer >        
+        <p>Copyright &copy; 2024 SocialNetworking. Powered by - SRM Students.</p>
     </footer>
 </div>
 

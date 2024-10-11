@@ -919,12 +919,22 @@ body::-webkit-scrollbar {
         display: none
     }
 
+
+    .user-component {
+        display: block;
+    }
+
     .friend-requests {
         display: block;
     }
 
     .users-component {
         display: block;
+    }
+
+
+    .edit-bio-view {
+        width: 80%;
     }
 
     .post-options,

@@ -81,8 +81,13 @@ if (isset($_SESSION['user_id'])) {
   
     </section>
 
-    <footer>
-        <p>Copyright &copy; 2024 SocialNetworking. Powered by - SRM Students.</p>
+    <footer style="background-color: #1c1c1c; color: #ccc; padding: 20px; text-align: center; font-size: 1rem;">
+      <div class="links-footer" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
+        <a href="privacy.php" style="color: #00ccff; text-decoration: none;">Privacy Policy</a>
+        <a href="disclaimer.php" style="color: #00ccff; text-decoration: none;">Disclaimer</a>
+        <a href="user-manual.php" style="color: #00ccff; text-decoration: none;">User Manual</a>
+      </div>
+      <p>Copyright &copy; 2024 SocialNetworking. Powered by - SRM Students.</p>
     </footer>
 
     <script src="js/carousel.js" async defer></script>
